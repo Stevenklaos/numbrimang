@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Guess the number</title>
+  <meta name="description" content="Guess the number">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<div class="game">
+
+  <body>
+    <form id="myForm">
+      Input your number: <input id="x" type="text" name="GuessedNumber"><br>
+    </form>
+    <button onclick="myFunction()">Guess the number</button>
+    <p id="result"></p>
+</div>
+<script>
+  // Generates random number from 0-99
+  var number = Math.floor(Math.random() * 100);
+
+  // When the "Guess the number" button is click, the myFunction function is called
+  function myFunction() {
+
+    // Get the value of the user guess input
+    var x = document.getElementById("x").value;
+
+    // If the user entered number is smaller than the generated number, then the user is told that the number is too small and vice versa for when its too big
+    if (number > x) {
+      document.getElementById("result").innerHTML = "Number " + x + " is too small";
+    } else if (number < x) {
+      document.getElementById("result").innerHTML = "Number " + x + " is too big";
+    } else {
+
+      // If the number matches the generated number, then the user is told that their guess is correct
+      document.getElementById("result").innerHTML = "Number " + x + " is correct";
+    }
+  }
+</script>
+</body>
+
+</html>
